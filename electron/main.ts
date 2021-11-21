@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, Menu, MenuItemConstructorOptions } from 'electron'
+import { app, BrowserWindow, ipcMain } from 'electron'
 import path from 'path'
 
 let mainWindow: BrowserWindow | null
@@ -39,29 +39,6 @@ function createWindow () {
   })
 }
 
-async function createMenu() {
-  const template: MenuItemConstructorOptions[] = [
-    {
-      label: 'Rocketredis',
-      submenu: [
-        {
-          label: 'Load',
-          accelerator: 'CmdOrCtrl+N',
-          click: () => {
-            mainWindow?.webContents.send('newConnection')
-          }
-        },
-        {
-          type: 'separator'
-        },
-      ]
-    }
-  ]
-
-  const menu = Menu.buildFromTemplate(template)
-  Menu.setApplicationMenu(menu);
-}
-
 async function registerListeners () {
   /**
    * This comes from bridge integration, check bridge.ts
@@ -83,7 +60,6 @@ app.on('window-all-closed', () => {
 })
 
 app.on('activate', () => {
-  createMenu()
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow()
   }

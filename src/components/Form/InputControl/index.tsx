@@ -1,4 +1,5 @@
-import { InputHTMLAttributes } from 'react';
+import React, { InputHTMLAttributes } from 'react';
+import { IconBaseProps } from 'react-icons';
 import { Control, Controller } from 'react-hook-form';
 
 import { Container } from "./styles";
@@ -8,7 +9,7 @@ import { Input } from "../../Input";
 type InputProps = {
   control: Control;
   error?: string;
-  icone?: 'user' | 'lock';
+  icone?: React.ComponentType<IconBaseProps>;
   name: string;
   type: 'text' | 'password',
 } & InputHTMLAttributes<HTMLInputElement>;

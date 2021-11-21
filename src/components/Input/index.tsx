@@ -1,19 +1,18 @@
-import { InputHTMLAttributes} from 'react';
-import { FiUser, FiLock } from 'react-icons/fi';
+import React, { InputHTMLAttributes} from 'react';
+import { IconBaseProps } from 'react-icons';
 
 import { Container, ContainerWrapper, InputElement, TextError } from './styles';
 
 type InputPros = {
-  icone?: 'user' | 'lock';
+  icone?: React.ComponentType<IconBaseProps>;
   error?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-export function Input({error, icone,...rest}: InputPros) {
+export function Input({error, icone: Icon,...rest}: InputPros) {
   return (
     <ContainerWrapper>
       <Container error={!!error}>
-        { icone === 'user' && <FiUser /> }
-        { icone === 'lock' && <FiLock /> }
+        { Icon && <Icon /> }
         <InputElement
           {...rest}
           />

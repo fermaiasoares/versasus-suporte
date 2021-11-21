@@ -26,6 +26,14 @@ export const FormLogin = styled.div`
   padding: 24px 20px;
 
   filter: drop-shadow(0px 19px 10px rgba(0, 0, 0, 0.25));
+
+  & > a {
+    text-decoration: none;
+    font-family: Roboto;
+    font-size: 18px;
+
+    color: #0078BC;
+  }
 `;
 
 export const Title = styled.div`
@@ -55,12 +63,4 @@ export const Button = styled.button`
   &:hover {
     background-color: ${shade(0.1, '#004770')};
   }
-`;
-
-export const Link = styled.a`
-  text-decoration: none;
-  font-family: Roboto;
-  font-size: 18px;
-
-  color: #0078BC;
 `;
