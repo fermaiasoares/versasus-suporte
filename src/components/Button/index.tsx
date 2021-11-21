@@ -1,18 +1,19 @@
-import React, { ReactNode, ButtonHTMLAttributes } from 'react'
+import React, { ButtonHTMLAttributes } from 'react'
 import { IconBaseProps } from 'react-icons';
 
 import { Container } from './styles'
 
 type ButtonProps = {
-  children: ReactNode;
+  title: string,
   icone?: React.ComponentType<IconBaseProps>;
+  color?: string; 
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export function Button ({ children, icone: Icon, ...rest }: ButtonProps) {
+export function Button ({ title, icone: Icon, ...rest }: ButtonProps) {
   return (
     <Container type="button" {...rest}>
       { Icon && <Icon /> }
-      {children}
+      {title}
     </Container>
   );
 }

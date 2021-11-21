@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const Container = styled.button`
+type Props = {
+  color?: string;
+}
+
+export const Container = styled.button<Props>`
   height: 42px;
   padding: 0 24px;
   
@@ -8,7 +12,7 @@ export const Container = styled.button`
   align-items: center;
   justify-content: center;
 
-  background: #8257e6;
+  background: ${props => props.color ? props.color : '#8257e6'};
   border-radius: 8px;
   border: 0;
 

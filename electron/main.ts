@@ -22,7 +22,7 @@ function createWindow () {
     minWidth: 1000,
     minHeight: 600,
     transparent: false,
-    backgroundColor: '#191622',
+    backgroundColor: '#004770',
     frame: true,
     webPreferences: {
       nodeIntegration: true,

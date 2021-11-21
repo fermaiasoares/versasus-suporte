@@ -10,6 +10,7 @@ import { useAuth } from '../hooks/auth';
 
 import { Login } from '../screens/Login';
 import { Dashboard } from '../screens/Dashboard';
+import { Instancias } from '../screens/Instancias';
 
 export function AppRoutes() {
   return (
@@ -18,6 +19,11 @@ export function AppRoutes() {
       <Route path="/" element={
         <RequireAuth>
           <Dashboard />
+        </RequireAuth>
+      } />
+      <Route path="/instancias" element={
+        <RequireAuth>
+          <Instancias />
         </RequireAuth>
       } />
       <Route path="/login" element={<Login />} />
