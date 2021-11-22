@@ -24,6 +24,7 @@ function createWindow () {
     transparent: false,
     backgroundColor: '#004770',
     frame: true,
+    autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule: true,
