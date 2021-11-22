@@ -66,11 +66,7 @@ export const Header = styled.div`
 `;
 
 export const HeaderActions = styled.div`
-  & > a {
-    text-decoration: none;
-  }
-
-  & > a > button { 
+  > button { 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,7 +87,7 @@ export const HeaderActions = styled.div`
     font-size: 16px;
   }
 
-  & > a > button > svg {
+  & > button > svg {
     margin-right: 8px;
     font-size: 24px;
     stroke: #fff;
@@ -130,5 +126,76 @@ export const ButtonAction = styled.button`
 
   & > svg {
     color: #fff;
+  }
+`;
+
+export const FormInstancia = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  width: 700px;
+
+  .input-block {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 8px 0;
+  }
+  
+  .input-block > label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #004770;
+  }
+
+  .input-block > input, select {
+    height: 32px;
+    border: 1px solid #004770;
+    border-radius: 4px;
+    padding: 4px 8px;
+  }
+
+  .input-block > input:disabled, select:disabled {
+    background-color: #fff;
+    color: #004770;
+  }
+
+  .row {
+    display: flex;
+  }
+
+  .divider {
+    margin: 0 16px;
+  }
+
+  .row-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    
+    > button {
+      padding: 8px 30px;
+      border-radius: 8px;
+      border: none;
+
+      &.save {
+        background-color: #36BEB6;
+        color: #fff;
+
+        &:hover {
+          background-color: ${shade(0.4, '#36BEB6')};
+        }
+      }
+
+      &.close {
+        background-color: #d36;
+        color: #fff;
+
+        &:hover {
+          background-color: ${shade(0.4, '#d36')};
+        }
+      }
+    }
   }
 `;
